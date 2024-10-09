@@ -80,6 +80,7 @@
     "?" 'howm-view-help             ;; FIXME
     "f" 'howm-view-filter
     "G" 'howm-view-filter-by-contents
+    "s" 'howm-view-sort
     "S" 'howm-view-sort
     "R" 'howm-view-sort-reverse
     "q" 'howm-view-kill-buffer
@@ -94,6 +95,7 @@
     "?" 'howm-view-help                 ;; FIXME
     "f" 'howm-view-filter
     "G" 'howm-view-filter-by-contents
+    "s" 'howm-view-sort
     "S" 'howm-view-sort
     "R" 'howm-view-sort-reverse
     "q" 'howm-view-kill-buffer
