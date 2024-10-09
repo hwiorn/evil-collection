@@ -36,8 +36,8 @@
                                       howm-menu-mode-map
                                       howm-mode-map
 
-                                      ;; illusion-mode in howm package
-                                      illusion-mode-map
+                                      ;; ;; illusion-mode in howm package
+                                      ;; illusion-mode-map
 
                                       ;; riffle-mode in howm package
                                       riffle-summary-mode-map
@@ -127,9 +127,9 @@
   (evil-set-initial-state 'howm-mode 'normal)
 
   ;;; illusion-mode in howm package
-  (evil-collection-define-key '(normal visual) 'illusion-mode-map
-    illusion-submit-key illusion-submit)
-  (evil-set-initial-state 'illusion-mode 'normal)
+  ;; (evil-collection-define-key '(normal visual) 'illusion-mode-map
+  ;;   illusion-submit-key illusion-submit)
+  ;; (evil-set-initial-state 'illusion-mode 'normal)
 
   ;;; riffle-mode
   (evil-collection-define-key '(normal visual) 'riffle-mode-map
