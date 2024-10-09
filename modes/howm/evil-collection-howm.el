@@ -53,7 +53,7 @@
     "-" 'howm-date-backward
     ")" 'howm-date-forward
     "(" 'howm-date-backward
-    "}" 'howm-date-forward-month
+    "}" 'howm-date-forward-month        ;; FIXME use calendar key?
     "{" 'howm-date-backward-month
     "]" 'howm-date-forward-year
     "[" 'howm-date-backward-year
@@ -69,10 +69,12 @@
     "T" 'howm-list-toggle-title ;; defined in other file. dirty!
     ;; howm-reminder-quick-check-key 'howm-reminder-quick-check ;; FIXME
     ;; ";" 'howm-view-invoke-action-lock                        ;; FIXME
-    "\C-i" 'howm-view-summary-next-section
-    "\M-\C-i" 'howm-view-summary-previous-section
+    ;; "\C-i" 'howm-view-summary-next-section
+    ;; "\M-\C-i" 'howm-view-summary-previous-section
     [tab] 'howm-view-summary-next-section
-    [(meta tab)] 'howm-view-summary-previous-section
+    [(backtab)] 'howm-view-summary-previous-section
+    "\C-n" 'howm-view-summary-next-section
+    "\C-p" 'howm-view-summary-previous-section
 
     ;; common
     "?" 'howm-view-help             ;; FIXME
