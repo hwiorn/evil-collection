@@ -132,7 +132,7 @@
     [backspace] 'scroll-other-window-down
     "\C-k" 'riffle-scroll-other-window-down
     "@" 'riffle-summary-to-contents
-    "v0" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
+    "0" 'riffle-summary-to-contents
     "v1" 'delete-other-windows
     "v2" 'riffle-pop-window
     "vv" 'riffle-toggle-window
