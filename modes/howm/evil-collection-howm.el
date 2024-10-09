@@ -106,7 +106,7 @@
   (evil-collection-define-key '(normal visual) 'howm-menu-mode-map
     action-lock-magic-return-key 'howm-menu-invoke
     [tab] 'action-lock-goto-next-link
-    [(meta tab)] 'action-lock-goto-previous-link
+    [(backtab)] 'action-lock-goto-previous-link
     ;; "\C-i" 'action-lock-goto-next-link
     ;; "\M-\C-i" 'action-lock-goto-previous-link
     ;; " " 'scroll-up
@@ -147,8 +147,8 @@
     "\C-h" 'scroll-other-window-down
     "j" 'next-line
     "k" 'previous-line
-    "J" 'riffle-scroll-other-window      ;; pop-or-scroll
-    "K" 'riffle-scroll-other-window-down ;; FIXME:안되네..
+    "\C-j" 'riffle-scroll-other-window      ;; pop-or-scroll
+    "\C-k" 'riffle-scroll-other-window-down ;; FIXME:안되네..
     "@" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
     "0" 'riffle-summary-to-contents
     "1" 'delete-other-windows
