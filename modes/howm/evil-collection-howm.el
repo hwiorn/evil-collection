@@ -141,14 +141,13 @@
     "q" 'riffle-kill-buffer)
 
   (evil-collection-define-key '(normal visual) 'riffle-summary-mode-map
-    "\C-S-j" 'riffle-pop-or-scroll-other-window
+    "\C-j" 'riffle-pop-or-scroll-other-window
     [backspace] 'scroll-other-window-down
     "\C-h" 'scroll-other-window-down
     "j" 'next-line
     "k" 'previous-line
-    "\C-j" 'riffle-scroll-other-window      ;; pop-or-scroll
+    ;; "\C-j" 'riffle-scroll-other-window
     "\C-k" 'riffle-scroll-other-window-down
-    "\C-S-k" 'riffle-scroll-other-window-down
     "@" 'riffle-summary-to-contents
     "0" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
     "1" 'delete-other-windows
@@ -166,10 +165,14 @@
     "k" 'riffle-scroll-down
     "@" 'riffle-contents-to-summary
     "0" 'riffle-contents-to-summary
-    "\C-i" 'riffle-contents-goto-next-item
-    "\M-\C-i" 'riffle-contents-goto-previous-item
+    ;; "\C-i" 'riffle-contents-goto-next-item
+    ;; "\M-\C-i" 'riffle-contents-goto-previous-item
+    ;; [tab] 'riffle-contents-goto-next-item
+    ;; [(meta tab)] 'riffle-contents-goto-previous-item
+    "\C-n" 'riffle-contents-goto-next-item
+    "\C-p" 'riffle-contents-goto-previous-item
     [tab] 'riffle-contents-goto-next-item
-    [(meta tab)] 'riffle-contents-goto-previous-item
+    [(backtab)] 'riffle-contents-goto-previous-item
     ;;   (define-key m "o" 'riffle-jump-to-summary)
     )
 
