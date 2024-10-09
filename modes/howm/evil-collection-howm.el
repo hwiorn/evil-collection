@@ -143,8 +143,10 @@
     (kbd "\r") 'riffle-pop-or-scroll-other-window ;; FIXME
     [backspace] 'scroll-other-window-down
     "\C-h" 'scroll-other-window-down
-    "j" 'riffle-scroll-other-window
-    "k" 'riffle-scroll-other-window-down
+    "j" 'next-line
+    "k" 'previous-line
+    "J" 'riffle-scroll-other-window
+    "K" 'riffle-scroll-other-window-down
     "@" 'riffle-summary-to-contents
     "0" 'riffle-summary-to-contents
     "1" 'delete-other-windows
