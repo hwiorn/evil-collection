@@ -106,19 +106,11 @@
     "q" 'bury-buffer
     "?" 'describe-mode)
 
-  ;; (evil-collection-define-key '(normal visual) 'howm-mode-map
-  ;;   (kbd "\C-x\C-s") 'howm-save-buffer)
-
   (evil-set-initial-state 'howm-view-summary-mode 'normal)
   (evil-set-initial-state 'howm-view-contents-mode 'normal)
   (evil-set-initial-state 'howm-remember-mode 'normal)
   ;; (evil-set-initial-state 'howm-menu-mode 'normal) ;;FIXME
   ;; (evil-set-initial-state 'howm-mode 'normal)
-
-  ;;; illusion-mode in howm package
-  ;; (evil-collection-define-key '(normal visual) 'illusion-mode-map
-  ;;   illusion-submit-key illusion-submit)
-  ;; (evil-set-initial-state 'illusion-mode 'normal)
 
   ;;; riffle-mode
   (evil-collection-define-key '(normal visual) 'riffle-mode-map
@@ -135,7 +127,7 @@
     "0" 'riffle-summary-to-contents
     "v1" 'delete-other-windows
     "v2" 'riffle-pop-window
-    "vv" 'riffle-toggle-window
+    "v" 'riffle-toggle-window
     )
 
   (evil-collection-define-key '(normal visual) 'riffle-contents-mode-map
@@ -146,15 +138,10 @@
     "k" 'riffle-scroll-down
     "@" 'riffle-contents-to-summary
     "0" 'riffle-contents-to-summary
-    ;; "\C-i" 'riffle-contents-goto-next-item
-    ;; "\M-\C-i" 'riffle-contents-goto-previous-item
-    ;; [tab] 'riffle-contents-goto-next-item
-    ;; [(meta tab)] 'riffle-contents-goto-previous-item
     "\C-n" 'riffle-contents-goto-next-item
     "\C-p" 'riffle-contents-goto-previous-item
     [tab] 'riffle-contents-goto-next-item
     [(backtab)] 'riffle-contents-goto-previous-item
-    ;;   (define-key m "o" 'riffle-jump-to-summary)
     )
 
   (evil-set-initial-state 'riffle-summary-mode 'normal)
