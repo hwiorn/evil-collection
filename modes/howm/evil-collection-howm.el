@@ -145,9 +145,9 @@
     "\C-h" 'scroll-other-window-down
     "j" 'next-line
     "k" 'previous-line
-    "J" 'riffle-scroll-other-window
-    "K" 'riffle-scroll-other-window-down
-    "@" 'riffle-summary-to-contents
+    "J" 'riffle-scroll-other-window      ;; pop-or-scroll
+    "K" 'riffle-scroll-other-window-down ;; FIXME:안되네..
+    "@" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
     "0" 'riffle-summary-to-contents
     "1" 'delete-other-windows
     "2" 'riffle-pop-window
