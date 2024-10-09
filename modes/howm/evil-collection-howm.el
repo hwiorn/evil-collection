@@ -33,6 +33,7 @@
                                       howm-view-summary-mode-map
                                       howm-view-contents-mode-map
                                       howm-remember-mode-map
+                                      howm-simulate-todo-mode-map
                                       howm-menu-mode-map
                                       howm-mode-map
 
@@ -95,8 +96,12 @@
   ;;   "\C-c\C-c" 'howm-remember-submit
   ;;   "\C-c\C-k" 'howm-remember-discard)
 
+  (evil-collection-define-key '(normal visual) 'howm-simulate-todo-mode-map
+    ">" 'howm-simulate-todo-next-date
+    "<" 'howm-simulate-todo-previous-date
+    "=" 'howm-simulate-todo-reset)
+
   (evil-collection-define-key '(normal visual) 'howm-menu-mode-map
-    action-lock-magic-return-key 'howm-menu-invoke
     [tab] 'action-lock-goto-next-link
     [(backtab)] 'action-lock-goto-previous-link
     "j" 'action-lock-goto-next-link
@@ -109,7 +114,8 @@
   (evil-set-initial-state 'howm-view-summary-mode 'normal)
   (evil-set-initial-state 'howm-view-contents-mode 'normal)
   (evil-set-initial-state 'howm-remember-mode 'normal)
-  ;; (evil-set-initial-state 'howm-menu-mode 'normal) ;;FIXME
+  (evil-set-initial-state 'howm-simulate-todo-mode 'normal)
+  (evil-set-initial-state 'howm-menu-mode 'normal) ;;FIXME
   ;; (evil-set-initial-state 'howm-mode 'normal)
 
   ;;; riffle-mode
