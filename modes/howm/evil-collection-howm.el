@@ -91,9 +91,9 @@
     "q" 'howm-view-kill-buffer
     "X" 'howm-view-dired)
 
-  (evil-collection-define-key '(normal visual) 'howm-remember-mode-map
-    "\C-c\C-c" 'howm-remember-submit    ;; FIXME
-    "\C-c\C-k" 'howm-remember-discard)
+  ;; (evil-collection-define-key '(normal visual) 'howm-remember-mode-map
+  ;;   "\C-c\C-c" 'howm-remember-submit
+  ;;   "\C-c\C-k" 'howm-remember-discard)
 
   (evil-collection-define-key '(normal visual) 'howm-menu-mode-map
     action-lock-magic-return-key 'howm-menu-invoke
