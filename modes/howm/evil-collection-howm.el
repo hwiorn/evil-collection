@@ -63,7 +63,7 @@
 
     ;; summary
     "\C-m" 'howm-view-summary-open
-    "\C-j" 'howm-view-summary-open
+    ;; "\C-j" 'howm-view-summary-open
     "u" 'howm-view-filter-uniq          ;; FIXME
     "!" 'howm-view-summary-shell-command
     "T" 'howm-list-toggle-title ;; defined in other file. dirty!
@@ -86,7 +86,7 @@
   (evil-collection-define-key '(normal visual) 'howm-view-contents-mode-map
     ;; contents
     "\C-m" 'howm-view-contents-open
-    "\C-j" 'howm-view-contents-open
+    ;; "\C-j" 'howm-view-contents-open
 
     ;; common
     "?" 'howm-view-help                 ;; FIXME
@@ -117,14 +117,14 @@
     "q" 'bury-buffer
     "?" 'describe-mode)
 
-  (evil-collection-define-key '(normal visual) 'howm-mode-map
-    (kbd "\C-x\C-s") 'howm-save-buffer) ;; FIXME
+  ;; (evil-collection-define-key '(normal visual) 'howm-mode-map
+  ;;   (kbd "\C-x\C-s") 'howm-save-buffer)
 
   (evil-set-initial-state 'howm-view-summary-mode 'normal)
   (evil-set-initial-state 'howm-view-contents-mode 'normal)
   (evil-set-initial-state 'howm-remember-mode 'normal)
   ;; (evil-set-initial-state 'howm-menu-mode 'normal) ;;FIXME
-  (evil-set-initial-state 'howm-mode 'normal)
+  ;; (evil-set-initial-state 'howm-mode 'normal)
 
   ;;; illusion-mode in howm package
   ;; (evil-collection-define-key '(normal visual) 'illusion-mode-map
