@@ -143,9 +143,7 @@
   (evil-collection-define-key '(normal visual) 'riffle-summary-mode-map
     "\C-j" 'riffle-pop-or-scroll-other-window
     [backspace] 'scroll-other-window-down
-    "\C-h" 'scroll-other-window-down
-    "j" 'next-line
-    "k" 'previous-line
+    ;; "\C-h" 'scroll-other-window-down ;; FIXME
     ;; "\C-j" 'riffle-scroll-other-window
     "\C-k" 'riffle-scroll-other-window-down
     "@" 'riffle-summary-to-contents
@@ -157,10 +155,9 @@
     )
 
   (evil-collection-define-key '(normal visual) 'riffle-contents-mode-map
-    ;; " " 'scroll-up
-    (kbd "\r") 'riffle-pop-or-scroll-other-window ;; FIXME
-    [backspace] 'scroll-down                      ;; FIXME
-    ;; "\C-h" 'scroll-down                        ;; FIXME
+    "\C-j" 'scroll-up
+    [backspace] 'scroll-down
+    "\C-k" 'scroll-down
     "j" 'riffle-scroll-up
     "k" 'riffle-scroll-down
     "@" 'riffle-contents-to-summary
