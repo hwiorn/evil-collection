@@ -77,7 +77,7 @@
     "\C-p" 'howm-view-summary-previous-section
 
     ;; common
-    "?" 'howm-view-help             ;; FIXME
+    ;; "?" 'howm-view-help             ;; FIXME
     "f" 'howm-view-filter
     "G" 'howm-view-filter-by-contents
     "s" 'howm-view-sort
@@ -92,7 +92,7 @@
     ;; "\C-j" 'howm-view-contents-open
 
     ;; common
-    "?" 'howm-view-help                 ;; FIXME
+    ;; "?" 'howm-view-help                 ;; FIXME
     "f" 'howm-view-filter
     "G" 'howm-view-filter-by-contents
     "s" 'howm-view-sort
