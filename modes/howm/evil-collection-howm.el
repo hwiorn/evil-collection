@@ -53,7 +53,7 @@
     "-" 'howm-date-backward
     ")" 'howm-date-forward
     "(" 'howm-date-backward
-    "}" 'howm-date-forward-month        ;; FIXME use calendar key?
+    "}" 'howm-date-forward-month
     "{" 'howm-date-backward-month
     "]" 'howm-date-forward-year
     "[" 'howm-date-backward-year
@@ -63,24 +63,17 @@
 
     ;; summary
     "\C-m" 'howm-view-summary-open
-    ;; "\C-j" 'howm-view-summary-open
-    "u" 'howm-view-filter-uniq          ;; FIXME
+    "u" 'howm-view-filter-uniq
     "!" 'howm-view-summary-shell-command
     "T" 'howm-list-toggle-title ;; defined in other file. dirty!
-    ;; howm-reminder-quick-check-key 'howm-reminder-quick-check ;; FIXME
-    ;; ";" 'howm-view-invoke-action-lock                        ;; FIXME
-    ;; "\C-i" 'howm-view-summary-next-section
-    ;; "\M-\C-i" 'howm-view-summary-previous-section
     [tab] 'howm-view-summary-next-section
     [(backtab)] 'howm-view-summary-previous-section
     "\C-n" 'howm-view-summary-next-section
     "\C-p" 'howm-view-summary-previous-section
 
     ;; common
-    ;; "?" 'howm-view-help             ;; FIXME
     "f" 'howm-view-filter
     "G" 'howm-view-filter-by-contents
-    "s" 'howm-view-sort
     "S" 'howm-view-sort
     "R" 'howm-view-sort-reverse
     "q" 'howm-view-kill-buffer
@@ -89,13 +82,10 @@
   (evil-collection-define-key '(normal visual) 'howm-view-contents-mode-map
     ;; contents
     "\C-m" 'howm-view-contents-open
-    ;; "\C-j" 'howm-view-contents-open
 
     ;; common
-    ;; "?" 'howm-view-help                 ;; FIXME
     "f" 'howm-view-filter
     "G" 'howm-view-filter-by-contents
-    "s" 'howm-view-sort
     "S" 'howm-view-sort
     "R" 'howm-view-sort-reverse
     "q" 'howm-view-kill-buffer
@@ -109,11 +99,6 @@
     action-lock-magic-return-key 'howm-menu-invoke
     [tab] 'action-lock-goto-next-link
     [(backtab)] 'action-lock-goto-previous-link
-    ;; "\C-i" 'action-lock-goto-next-link
-    ;; "\M-\C-i" 'action-lock-goto-previous-link
-    ;; " " 'scroll-up
-    ;; [backspace] 'scroll-down
-    ;; "\C-h" 'scroll-down
     "j" 'action-lock-goto-next-link
     "k" 'action-lock-goto-previous-link
     "\C-k" 'scroll-up
@@ -145,15 +130,12 @@
   (evil-collection-define-key '(normal visual) 'riffle-summary-mode-map
     "\C-j" 'riffle-pop-or-scroll-other-window
     [backspace] 'scroll-other-window-down
-    ;; "\C-h" 'scroll-other-window-down ;; FIXME
-    ;; "\C-j" 'riffle-scroll-other-window
     "\C-k" 'riffle-scroll-other-window-down
     "@" 'riffle-summary-to-contents
-    "0" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
-    "1" 'delete-other-windows
-    "2" 'riffle-pop-window
-    "v" 'riffle-toggle-window
-    ;;   (define-key m "o" 'riffle-jump-to-contents)
+    "v0" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
+    "v1" 'delete-other-windows
+    "v2" 'riffle-pop-window
+    "vv" 'riffle-toggle-window
     )
 
   (evil-collection-define-key '(normal visual) 'riffle-contents-mode-map
