@@ -229,6 +229,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     help
     helpful
     hg-histedit
+    howm
     hungry-delete
     hyrolo
     ibuffer
@@ -476,16 +477,16 @@ binding in `annalist' as so."
              (key-with-prefix (concat prefix key))
              (def (pop bindings))
              (def-with-menu-item
-               `(menu-item
-                 ""
-                 nil
-                 :filter
-                 (lambda (&optional _)
-                   (when (or
-                          (eq evil-this-operator (key-binding ,remap))
-                          (memq evil-this-operator ,operators))
-                     (setq evil-inhibit-operator t)
-                     ',def)))))
+              `(menu-item
+                ""
+                nil
+                :filter
+                (lambda (&optional _)
+                  (when (or
+                         (eq evil-this-operator (key-binding ,remap))
+                         (memq evil-this-operator ,operators))
+                    (setq evil-inhibit-operator t)
+                    ',def)))))
         (when (or (and whitelist (member key-with-prefix whitelist))
                   (not (member key-with-prefix blacklist)))
           (annalist-record 'evil-collection 'keybindings
@@ -731,16 +732,16 @@ invocation."
                 (cl-gensym
                  (format "evil-collection-translate-key-in-%s" keymap-symbol)))))
           (evil-collection--delay `(and (boundp ',keymap-symbol)
-                                       (keymapp ,keymap-symbol))
-              `(evil-collection--translate-minor-mode-key
-                 ',state
-                 ',mode-symbol
-                 ',translations
-                 ,destructive)
-              'after-load-functions
-              t
-              nil
-              hook-name))))))
+                                        (keymapp ,keymap-symbol))
+                                  `(evil-collection--translate-minor-mode-key
+                                    ',state
+                                    ',mode-symbol
+                                    ',translations
+                                    ,destructive)
+                                  'after-load-functions
+                                  t
+                                  nil
+                                  hook-name))))))
 
 
 (defun evil-collection--translate-minor-mode-key (state
@@ -843,15 +844,15 @@ invocation."
                (format "evil-collection-translate-key-in-%s" keymap-symbol)))))
         (evil-collection--delay `(and (boundp ',keymap-symbol)
                                       (keymapp ,keymap-symbol))
-            `(evil-collection--translate-key
-               ',state
-               ',keymap-symbol
-               ',translations
-               ,destructive)
-            'after-load-functions
-             t
-             nil
-             hook-name)))))
+                                `(evil-collection--translate-key
+                                  ',state
+                                  ',keymap-symbol
+                                  ',translations
+                                  ,destructive)
+                                'after-load-functions
+                                t
+                                nil
+                                hook-name)))))
 
 
 ;;;###autoload
