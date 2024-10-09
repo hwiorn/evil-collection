@@ -141,16 +141,16 @@
     "q" 'riffle-kill-buffer)
 
   (evil-collection-define-key '(normal visual) 'riffle-summary-mode-map
-    ;; " " 'riffle-pop-or-scroll-other-window ;; FIXME
-    (kbd "\r") 'riffle-pop-or-scroll-other-window ;; FIXME
+    "\C-S-j" 'riffle-pop-or-scroll-other-window
     [backspace] 'scroll-other-window-down
     "\C-h" 'scroll-other-window-down
     "j" 'next-line
     "k" 'previous-line
     "\C-j" 'riffle-scroll-other-window      ;; pop-or-scroll
-    "\C-k" 'riffle-scroll-other-window-down ;; FIXME:안되네..
-    "@" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
-    "0" 'riffle-summary-to-contents
+    "\C-k" 'riffle-scroll-other-window-down
+    "\C-S-k" 'riffle-scroll-other-window-down
+    "@" 'riffle-summary-to-contents
+    "0" 'riffle-summary-to-contents     ;; FIXME 0,1,2,v ->를 합칠것
     "1" 'delete-other-windows
     "2" 'riffle-pop-window
     "v" 'riffle-toggle-window
