@@ -67,8 +67,8 @@
     "u" 'howm-view-filter-uniq          ;; FIXME
     "!" 'howm-view-summary-shell-command
     "T" 'howm-list-toggle-title ;; defined in other file. dirty!
-    howm-reminder-quick-check-key 'howm-reminder-quick-check ;; FIXME
-    ";" 'howm-view-invoke-action-lock                        ;; FIXME
+    ;; howm-reminder-quick-check-key 'howm-reminder-quick-check ;; FIXME
+    ;; ";" 'howm-view-invoke-action-lock                        ;; FIXME
     "\C-i" 'howm-view-summary-next-section
     "\M-\C-i" 'howm-view-summary-previous-section
     [tab] 'howm-view-summary-next-section
