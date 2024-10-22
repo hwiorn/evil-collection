@@ -116,7 +116,7 @@
   (evil-set-initial-state 'howm-remember-mode 'normal)
   (evil-set-initial-state 'howm-simulate-todo-mode 'normal)
   (evil-set-initial-state 'howm-menu-mode 'normal) ;;FIXME
-  ;; (evil-set-initial-state 'howm-mode 'normal)
+  (evil-set-initial-state 'howm-mode 'normal)
 
   ;;; riffle-mode
   (evil-collection-define-key '(normal visual) 'riffle-mode-map
