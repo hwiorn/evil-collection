@@ -24,20 +24,37 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; Evil basic bindings for org-mode. It's NOT intended to supersede
+;; Evil basic bindings for org-mode.  It's NOT intended to supersede
 ;; `evil-org-mode'.
 ;;
 
 ;;; Code:
 (require 'evil-collection)
+(require 'org nil t)
 
-(defconst evil-collection-org-maps '(org-mode-map))
+
+(defconst evil-collection-org-maps '(org-mode-map
+                                     org-capture-mode-map
+                                     org-read-date-minibuffer-local-map))
 
 (declare-function org-shifttab "org")
 (declare-function org-backward-paragraph "org")
 (declare-function org-forward-paragraph "org")
 (declare-function org-backward-sentence "org")
 (declare-function org-forward-sentence "org")
+(declare-function org-capture-finalize "org-capture")
+(declare-function org-capture-kill "org-capture")
+(declare-function org-capture-refile "org-capture")
+
+(declare-function org-calendar-forward-day "org")
+(declare-function org-calendar-backward-day "org")
+(declare-function org-calendar-forward-week "org")
+(declare-function org-calendar-backward-week "org")
+(declare-function org-calendar-forward-month "org")
+(declare-function org-calendar-backward-month "org")
+(declare-function org-calendar-forward-year "org")
+(declare-function org-calendar-backward-year "org")
+(declare-function org-defkey "org")
 
 ;;;###autoload
 (defun evil-collection-org-setup ()
@@ -50,7 +67,21 @@
     "{" 'org-backward-paragraph
     "}" 'org-forward-paragraph
     "(" 'org-backward-sentence
-    ")" 'org-forward-sentence))
+    ")" 'org-forward-sentence)
+
+  (evil-collection-define-key 'normal 'org-capture-mode-map
+    "ZZ" 'org-capture-finalize
+    "ZQ" 'org-capture-kill
+    "ZR" 'org-capture-refile)
+
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-l") #'org-calendar-forward-day)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-h") #'org-calendar-backward-day)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-j") #'org-calendar-forward-week)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-k") #'org-calendar-backward-week)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-L") #'org-calendar-forward-month)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-H") #'org-calendar-backward-month)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-J") #'org-calendar-forward-year)
+  (org-defkey org-read-date-minibuffer-local-map (kbd "M-K") #'org-calendar-backward-year))
 
 (provide 'evil-collection-org)
 ;;; evil-collection-org.el ends here
