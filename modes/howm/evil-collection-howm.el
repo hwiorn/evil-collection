@@ -102,6 +102,7 @@
     "=" 'howm-simulate-todo-reset)
 
   (evil-collection-define-key '(normal visual) 'howm-menu-mode-map
+    action-lock-magic-return-key 'howm-menu-invoke
     [tab] 'action-lock-goto-next-link
     [(backtab)] 'action-lock-goto-previous-link
     "j" 'action-lock-goto-next-link
@@ -131,8 +132,8 @@
     "\C-k" 'riffle-scroll-other-window-down
     "@" 'riffle-summary-to-contents
     "0" 'riffle-summary-to-contents
-    "v1" 'delete-other-windows
-    "v2" 'riffle-pop-window
+    "1" 'delete-other-windows
+    "2" 'riffle-pop-window
     "v" 'riffle-toggle-window
     )
 
