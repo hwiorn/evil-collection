@@ -102,7 +102,8 @@
     "=" 'howm-simulate-todo-reset)
 
   (evil-collection-define-key '(normal visual) 'howm-menu-mode-map
-    action-lock-magic-return-key 'howm-menu-invoke
+    ;; action-lock-magic-return-key 'howm-menu-invoke
+    action-lock-magic-return-key 'action-lock-magic-return
     [tab] 'action-lock-goto-next-link
     [(backtab)] 'action-lock-goto-previous-link
     "j" 'action-lock-goto-next-link
