@@ -35,6 +35,11 @@
 
 (defconst evil-collection-vlf-maps '(vlf-mode-map))
 
+(defcustom evil-collection-vlf-want-g-bindings t
+  "Whether to bind single keys to g prefix."
+  :type 'boolean
+  :group 'evil-collection)
+
 (defun evil-collection-vlf-decrease-batch-size ()
   "Decrease vlf batch size by factor of 2."
   (interactive)
@@ -46,33 +51,38 @@
   "Set up `evil' bindings for `vlf'."
   (evil-set-initial-state 'vlf-mode 'normal)
 
-  (evil-collection-define-key 'normal 'vlf-mode-map
+  (add-hook 'vlf-mode-hook #'evil-normalize-keymaps)
+
+  (evil-collection-define-key 'normal 'vlf-prefix-map
     "gj" 'vlf-next-batch
     "gk" 'vlf-prev-batch
     (kbd "C-j") 'vlf-next-batch
     (kbd "C-k") 'vlf-prev-batch
     "]]" 'vlf-next-batch
     "[[" 'vlf-prev-batch
-
     "+" 'vlf-change-batch-size
     "-" 'evil-collection-vlf-decrease-batch-size
     "=" 'vlf-next-batch-from-point
-
     ;; refresh
     "gr" 'vlf-revert
-
-    "s" 'vlf-re-search-forward
-    "S" 'vlf-re-search-backward
-
-    "gg" 'vlf-beginning-of-file
-    "G" 'vlf-end-of-file
-    "J" 'vlf-jump-to-chunk
-    "E" 'vlf-ediff-buffers
-
     "g%" 'vlf-query-replace
-    "go" 'vlf-occur
-    "L" 'vlf-goto-line
-    "F" 'vlf-toggle-follow))
+    "go" 'vlf-occur)
+
+  (if evil-collection-vlf-want-g-bindings
+      (evil-collection-define-key 'normal 'vlf-prefix-map
+        "g/" 'vlf-re-search-forward
+        "g?" 'vlf-re-search-backward
+        "gJ" 'vlf-jump-to-chunk
+        "gE" 'vlf-ediff-buffers
+        "g:" 'vlf-goto-line
+        "gF" 'vlf-toggle-follow)
+    (evil-collection-define-key 'normal 'vlf-prefix-map
+      "s" 'vlf-re-search-forward
+      "S" 'vlf-re-search-backward
+      "J" 'vlf-jump-to-chunk
+      "E" 'vlf-ediff-buffers
+      "L" 'vlf-goto-line
+      "F" 'vlf-toggle-follow)))
 
 (provide 'evil-collection-vlf)
 ;;; evil-collection-vlf.el ends here

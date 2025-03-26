@@ -159,6 +159,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     calc
     calendar
     cider
+    citre
     cmake-mode
     color-rg
     comint
@@ -222,6 +223,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     gited
     gnus
     go-mode
+    gptel
     grep
     guix
     hackernews
@@ -259,6 +261,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     magit-section
     magit-todos
     markdown-mode
+    minesweeper
     ,@(when evil-collection-setup-minibuffer '(minibuffer))
     monky
     mpc
@@ -285,6 +288,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     (process-menu simple)
     prodigy
     profiler
+    p-search
     python
     quickrun
     racer
@@ -308,6 +312,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     simple-mpc
     slime
     sly
+    smerge-mode
     snake
     so-long
     speedbar
@@ -325,6 +330,7 @@ See `evil-collection-init' and `evil-collection--modes-with-delayed-setup'."
     trashed
     tuareg
     typescript-mode
+    ultra-scroll
     vc-annotate
     vc-dir
     vc-git
